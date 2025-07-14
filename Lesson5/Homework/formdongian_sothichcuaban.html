@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sở thích của bạn</title>
+    <style>
+      h2 {
+        text-align: center;
+        background-color: orange;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <fieldset style="width: 600px">
+        <h2>SỞ THÍCH CỦA BẠN</h2>
+        <table>
+          <tr>
+            <td style="color: blue; padding-right: 10px; text-align: right">
+              Họ và tên
+            </td>
+            <td>
+              <input
+                type="text"
+                name="yourname"
+                style="width: 200px; border: 2px solid gray"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td style="color: blue; padding-right: 10px; text-align: right">
+              Email
+            </td>
+            <td>
+              <input
+                type="text"
+                name="email"
+                style="width: 150px; border: 2px solid gray"
+              />
+            </td>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <td style="color: blue; vertical-align: top" rowspan="4">
+              Sở thích
+            </td>
+            <td>
+              <input type="checkbox" name="hobby" /><span style="color: orange"
+                >Thể thao</span
+              >
+            </td>
+            <td>
+              <input type="checkbox" name="hobby" /><span style="color: orange"
+                >Âm nhạc</span
+              >
+            </td>
+            <td>
+              <input type="checkbox" name="hobby" /><span style="color: orange"
+                >Đọc sách</span
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="checkbox" name="hobby" /><span style="color: orange"
+                >Lướt web</span
+              >
+            </td>
+            <td>
+              <input type="checkbox" name="hobby" /><span style="color: orange"
+                >Chơi game</span
+              >
+            </td>
+            <td>
+              <input type="checkbox" name="hobby" /><span style="color: orange"
+                >Điện ảnh</span
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="checkbox" name="hobby" /><span style="color: orange"
+                >Du lịch</span
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="submit" name="btSubmit" value="Gửi thông tin" />
+            </td>
+            <td><input type="reset" name="reset" value="Nhập lại" /></td>
+          </tr>
+        </table>
+      </fieldset>
+    </form>
+  </body>
+</html>
