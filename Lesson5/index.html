@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <style>
+      table {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+  <body>
+    <form
+      action="http://demo.codegym.vn/6/registration_form/register.php"
+      method="post"
+    >
+      <fieldset>
+        <legend>Thông tin đăng nhập</legend>
+        <label for="">Họ và Tên</label> <br />
+        <input
+          type="text"
+          name="Firstname"
+          placeholder="Tên họ của bạn"
+        /><br />
+        <label for="">Last name</label> <br />
+        <input type="text" name="Lastname" placeholder="Tên của bạn" disabled />
+        <br />
+        Password: <br />
+        <input type="password" name="password" placeholder="Mật khẩu của bạn" />
+        <br /><br />
+        <input type="submit" name="Submit" />
+        <input type="reset" name="reset" value="Login" /><br />
+      </fieldset>
+
+      <input type="radio" name="gender" value="Nam" />Nam<br />
+      <input type="radio" name="gender" value="Nữ" />Nữ<br />
+      <input type="radio" name="gender" value="Khác" />Khác <br />
+      <input type="checkbox" name="vehicle1" value="Bike" /> I have a bike
+      <br />
+      <input type="checkbox" name="vehicle2" value="Car" /> I have a car <br />
+      <input type="button" onclick="alert('Hello')" value="Click me!" />
+      <br /><br />
+      <select name="Chọn 1 phương án">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select>
+      <br /><br /><br />
+      <textarea rows="5" cols="100">Tôi là Nguyễn Xuân Hùng</textarea>
+      <br /><br /><br />
+      <table border="1">
+        <tr>
+          <th>STT</th>
+          <th>Họ và tên</th>
+          <th>Tuổi</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Nguyễn Xuân Hùng</td>
+          <td>34</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Vũ Đức Huy</td>
+          <td>28</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Vương Tiến Việt</td>
+          <td>34</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Hà Tuấn Việt</td>
+          <td>34</td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
