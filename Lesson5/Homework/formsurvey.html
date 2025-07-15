@@ -39,6 +39,25 @@
           "Lucida Sans", Arial, sans-serif;
         width: 50%;
       }
+      span {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        font-size: 13px;
+        text-align: left;
+        letter-spacing: 0.13px;
+        line-height: 19.5px;
+      }
+      legend {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        font-weight: 700;
+        font-size: 12.35px;
+        text-align: left;
+        line-height: 18.525px;
+      }
+      input[type="checkbox"] {
+        margin-right: 10px;
+      }
     </style>
   </head>
   <body>
@@ -52,14 +71,69 @@
         <option value="25-34">25-34</option>
         <option value="35-50">35-50</option>
         <option value="50+">50+</option></select
-      ><br />
+      ><br /><br />
       <label>What is your yearly income range? </label> <br />
       <select>
         <option value="$0 - $25,000">$0 - $25,000</option>
         <option value="$25,001 - $50,000">$25,001 - $50,000</option>
         <option value="$50,001 - $100,000">$50,001 - $100,000</option>
-        <option value="$100,000+">$100,000+</option>
-      </select>
+        <option value="$100,000+">$100,000+</option></select
+      ><br /><br />
+      <legend>Gender Identity</legend>
+      <table>
+        <tr>
+          <td><input type="radio" name="Gender" value="male" /></td>
+          <td><span>Male</span></td>
+        </tr>
+        <tr>
+          <td><input type="radio" name="Gender" value="Female" /></td>
+          <td><span>Female</span></td>
+        </tr>
+        <tr>
+          <td><input type="radio" name="Gender" value="Nonbinary" /></td>
+          <td><span>Nonbinary</span></td>
+        </tr>
+        <tr>
+          <td><input type="radio" name="Gender" value="other" /></td>
+          <td><span>Other</span></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><input type="text" /></td>
+        </tr>
+      </table>
+      <br />
+      <legend>
+        Which of the following products have your purchased in the last 2
+        months. Please check all that apply.
+      </legend>
+      <input type="checkbox" name="products" value="products1" /><span
+        >Product 1</span
+      >
+      <br />
+      <input type="checkbox" name="products" value="products2" /><span
+        >Product 2</span
+      >
+      <br />
+      <input type="checkbox" name="products" value="products3" /><span
+        >Product 3</span
+      >
+      <br /><br />
+      <legend>How often would you use our new product?</legend>
+      <table>
+        <tr>
+          <td><input type="radio" name="timeProduct" value="Daily" /></td>
+          <td><span>Daily</span></td>
+        </tr>
+        <tr>
+          <td><input type="radio" name="timeProduct" value="Weekly" /></td>
+          <td><span>Weekly</span></td>
+        </tr>
+        <tr>
+          <td><input type="radio" name="timeProduct" value="Monthly" /></td>
+          <td><span>Monthly</span></td>
+        </tr>
+      </table>
     </form>
   </body>
 </html>
