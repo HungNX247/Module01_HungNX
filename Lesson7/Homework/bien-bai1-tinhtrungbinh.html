@@ -45,6 +45,7 @@
     <button id="calculateBtn">Tính điểm</button>
     <p id="resulttotal">Result total:</p>
     <p id="resultaverage">Result average:</p>
+    <p class="error-message" id="errorMessage"></p>
     <script>
       const pointPhysicsInput = document.getElementById("physics");
       const pointChemistryInput = document.getElementById("chemistry");
@@ -52,6 +53,7 @@
       const calculateBtn = document.getElementById("calculateBtn");
       const resultParagraphTotal = document.getElementById("resulttotal");
       const resultParagraphAverage = document.getElementById("resultaverage");
+      const errorMessageParagraph = document.getElementById("errorMessage");
 
       function convertPoint() {
         const physics = parseFloat(pointPhysicsInput.value);
@@ -59,6 +61,22 @@
         const biology = parseFloat(pointBiologyInput.value);
         resultParagraphTotal.textContent = "";
         resultParagraphAverage.textContent = "";
+
+        if (
+          isNaN(physics) ||
+          physics < 0 ||
+          physics > 10 ||
+          isNaN(chemistry) ||
+          chemistry < 0 ||
+          chemistry > 10 ||
+          isNaN(biology) ||
+          biology < 0 ||
+          biology > 10
+        ) {
+          errorMessageParagraph.textContent =
+            "Lỗi: Vui lòng nhập điểm hợp lệ (từ 0 đến 10) cho tất cả các môn";
+        }
+        return;
 
         const pointTotal = physics + chemistry + biology;
         const pointAverage = pointTotal / 3;
