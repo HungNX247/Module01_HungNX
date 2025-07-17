@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tính trung bình</title>
+    <style>
+      td {
+        text-align: center;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Tính tổng và trung bình điểm</h3>
+    <table>
+      <tr>
+        <td>
+          <label>Vật lý</label> <br />
+          <input
+            type="number"
+            id="physics"
+            placeholder="Nhập điểm môn Vật lý"
+          />
+        </td>
+        <td>
+          <label>Hóa học</label> <br />
+          <input
+            type="number"
+            id="chemistry"
+            placeholder="Nhập điểm môn Hóa học"
+          />
+        </td>
+        <td>
+          <label>Sinh học</label> <br />
+          <input
+            type="number"
+            id="biology"
+            placeholder="Nhập điểm môn Sinh học"
+          />
+        </td>
+      </tr>
+    </table>
+    <br />
+    <button id="calculateBtn">Tính điểm</button>
+    <p id="resulttotal">Result total:</p>
+    <p id="resultaverage">Result average:</p>
+    <script>
+      const pointPhysicsInput = document.getElementById("physics");
+      const pointChemistryInput = document.getElementById("chemistry");
+      const pointBiologyInput = document.getElementById("biology");
+      const calculateBtn = document.getElementById("calculateBtn");
+      const resultParagraphTotal = document.getElementById("resulttotal");
+      const resultParagraphAverage = document.getElementById("resultaverage");
+
+      function convertPoint() {
+        const physics = parseFloat(pointPhysicsInput.value);
+        const chemistry = parseFloat(pointChemistryInput.value);
+        const biology = parseFloat(pointBiologyInput.value);
+        resultParagraphTotal.textContent = "";
+        resultParagraphAverage.textContent = "";
+
+        const pointTotal = physics + chemistry + biology;
+        const pointAverage = pointTotal / 3;
+
+        resultParagraphTotal.textContent = `Tổng điểm: ${pointTotal}`;
+        resultParagraphAverage.textContent = `Trung bình: ${pointAverage}`;
+      }
+      calculateBtn.addEventListener("click", convertPoint);
+    </script>
+  </body>
+</html>
