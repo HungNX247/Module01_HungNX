@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chu vi hình tròn</title>
+  </head>
+  <body>
+    <h3>Tính chu vi hình tròn</h3>
+    <input type="number" id="radius" placeholder="bán kính đường tròn" />
+    <button id="Perimeterbtn">Tính</button>
+    <p id="resultperimeter">Result:</p>
+    <script>
+      const raDiusInput = document.getElementById("radius");
+      const perimeterBtn = document.getElementById("Perimeterbtn");
+      const resultParagraphperimeter =
+        document.getElementById("resultperimeter");
+      const PI_NUMBER = 3.14159;
+
+      function convertPerimeter() {
+        const raDius = parseFloat(raDiusInput.value);
+        resultParagraphperimeter.textContent = "";
+
+        if (raDius <= 0 || isNaN(raDius)) {
+          resultParagraphperimeter.textContent = "Lỗi: bán kính phải lớn hơn 0";
+          return;
+        }
+
+        const periMeter = 2 * PI_NUMBER * raDius;
+        resultParagraphperimeter.textContent = `Result:${periMeter}`;
+      }
+      perimeterBtn.addEventListener("click", convertPerimeter);
+    </script>
+  </body>
+</html>
