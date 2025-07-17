@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chuyển đổi nhiệt độ</title>
+  </head>
+  <body>
+    <h2>Chuyển độ C sang độ F</h2>
+    <input type="number" id="celsius" placeholder="Độ C (Celsius)" />
+    <button id="fahrenheitbtn">Nhập</button>
+    <p id="temperature">Result:</p>
+
+    <script>
+      const celSiusInput = document.getElementById("celsius");
+      const changeFahrenheitBtn = document.getElementById("fahrenheitbtn");
+      const resultParagraphTem = document.getElementById("temperature");
+
+      function convertTem() {
+        const celSius = parseFloat(celSiusInput.value);
+        resultParagraphTem.textContent = "";
+
+        const faHrenhei = celSius * 1.8 + 32;
+        resultParagraphTem.textContent = `Result: ${faHrenhei}`;
+      }
+      changeFahrenheitBtn.addEventListener("click", convertTem);
+    </script>
+  </body>
+</html>
