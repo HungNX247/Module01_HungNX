@@ -7,6 +7,24 @@
   </head>
   <body>
     <h3>Tính diện tích hình tròn</h3>
-    <input type="number" />
+    <input type="number" id="radius" placeholder="bán kính đường tròn" />
+    <button id="areabtn">Tính</button>
+    <p id="resultarea">Result:</p>
+    <script>
+      const raDiusInput = document.getElementById("radius");
+      const areaBtn = document.getElementById("areabtn");
+      const resultParagrapharea = document.getElementById("resultarea");
+
+      const PI_NUMBER = 3.14159;
+
+      function convertArea() {
+        const raDius = parseFloat(raDiusInput.value);
+        resultParagrapharea.textContent = "";
+
+        const aRea = PI_NUMBER * raDius ** 2;
+        resultParagrapharea.textContent = `Result:${aRea}`;
+      }
+      areaBtn.addEventListener("click", convertArea);
+    </script>
   </body>
 </html>
