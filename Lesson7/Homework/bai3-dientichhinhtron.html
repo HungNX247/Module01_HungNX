@@ -14,12 +14,16 @@
       const raDiusInput = document.getElementById("radius");
       const areaBtn = document.getElementById("areabtn");
       const resultParagrapharea = document.getElementById("resultarea");
-
       const PI_NUMBER = 3.14159;
 
       function convertArea() {
         const raDius = parseFloat(raDiusInput.value);
         resultParagrapharea.textContent = "";
+
+        if (raDius <= 0 || isNaN(raDius)) {
+          resultParagrapharea.textContent = "Lỗi: bán kính phải lớn hơn 0";
+          return;
+        }
 
         const aRea = PI_NUMBER * raDius ** 2;
         resultParagrapharea.textContent = `Result:${aRea}`;
