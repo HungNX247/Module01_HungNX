@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <h3>Calculator</h3>
+    <input type="number" id="num1" placeholder="Nhập số thứ 1" />
+    <input type="number" id="num2" placeholder="Nhập số thứ 2" /> <br /><br />
+    <button onclick="caculate('add')">Addition(+)</button>
+    <button onclick="caculate('sub')">Subtraction(-)</button>
+    <button onclick="caculate('multiply')">Multiplication(X)</button>
+    <button onclick="caculate('divide')">Division(/)</button>
+    <p id="result">Result Division :</p>
+
+    <script>
+      function caculate(operation) {
+        let num1 = parseFloat(document.getElementById("num1").value);
+        let num2 = parseFloat(document.getElementById("num2").value);
+
+        let result;
+        let operationText = "";
+
+        if (isNaN(num1) || isNaN(num2)) {
+          document.getElementById("result").textContent =
+            "Lỗi: số không hợp lệ";
+          return;
+        }
+
+        switch (operation) {
+          case "add":
+            result = num1 + num2;
+            operationText = "Addition";
+            break;
+          case "sub":
+            result = num1 - num2;
+            operationText = "Subtraction";
+            break;
+          case "multiply":
+            result = num1 * num2;
+            operationText = "Multiplication";
+            break;
+          case "divide":
+            if (num2 == 0) {
+              result = "num2 không được bằng 0";
+              operationText = "Division";
+            } else {
+              result = num1 / num2;
+              operationText = "Division";
+            }
+            break;
+          default:
+            result = "Phép tính không hợp lệ";
+            break;
+        }
+        document.getElementById(
+          "result"
+        ).textContent = `Result ${operationText} : ${result}`;
+      }
+    </script>
+  </body>
+</html>
