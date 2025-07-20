@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+  </head>
+  <body>
+    <script>
+      let id = prompt("Enter a id");
+
+      if (id == "Admin") {
+        let passWord = prompt("Enter a password");
+        if (passWord == "TheMaster") {
+          alert("Welcome");
+        } else {
+          if (passWord == "null") {
+            alert("Canceled");
+          } else {
+            alert("Wrong password");
+          }
+        }
+      } else {
+        if (id == "null") {
+          alert("Canceled");
+        } else {
+          alert("I don’t know you");
+        }
+      }
+    </script>
+  </body>
+</html>
