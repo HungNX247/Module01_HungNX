@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label
+      >Số cân nặng:
+      <input type="number" id="weight" placeholder="Nhập cân nặng (kg)"
+    /></label>
+    <br /><br />
+    <label
+      >Chiều cao:
+      <input
+        id="height"
+        type="number"
+        placeholder="Nhập chiều cao (m)" /></label
+    ><br /><br />
+    <button id="testbtn" onclick="convertBMI()">Kiểm tra</button><br />
+    <p id="result"></p>
+    <script>
+      function convertBMI() {
+        let weight = parseFloat(document.getElementById("weight").value);
+        let height = parseFloat(document.getElementById("height").value);
+        let BMI = weight / (height * height);
+
+        if (isNaN(weight) || weight <= 0 || isNaN(height) || height <= 0) {
+          document.getElementById("result").textContent =
+            "Lỗi: cân nặng và chiều cao phải lớn hơn 0";
+        } else if (BMI < 18.5) {
+          document.getElementById(
+            "result"
+          ).textContent = `Result:Chỉ số BMI là "${BMI}  . Bạn Underweight`;
+        } else if (BMI < 25) {
+          document.getElementById(
+            "result"
+          ).textContent = `Result:Chỉ số BMI là ${BMI}  . Bạn Normal`;
+        } else if (BMI < 30) {
+          document.getElementById(
+            "result"
+          ).textContent = `Result:Chỉ số BMI là ${BMI}  . Bạn Overweight`;
+        } else {
+          document.getElementById(
+            "result"
+          ).textContent = `Result:Chỉ số BMI là ${BMI}  . Bạn Obese`;
+        }
+      }
+    </script>
+  </body>
+</html>
