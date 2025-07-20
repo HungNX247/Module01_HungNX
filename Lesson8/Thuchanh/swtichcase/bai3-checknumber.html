@@ -8,13 +8,26 @@
   <body>
     <script>
       let number = parseInt(prompt("Enter number"));
+      let reSult;
 
       if (number > 0) {
-        alert(1);
+        reSult = 1;
       } else if (number < 0) {
-        alert(-1);
+        reSult = -1;
       } else {
-        alert(0);
+        reSult = 0;
+      }
+
+      switch (reSult) {
+        case 1:
+          alert(1);
+          break;
+        case -1:
+          alert(-1);
+          break;
+        default:
+          alert(0);
+          break;
       }
     </script>
   </body>
