@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kiểm tra số ngày trong tháng</title>
+  </head>
+  <body>
+    <h3>Kiểm tra số ngày trong tháng</h3>
+    <input type="number" id="nummonth" placeholder="Nhập tháng" />
+    <button id="checknumdaybtn" onclick="checkNum()">Tính số ngày</button>
+    <p id="result"></p>
+
+    <script>
+      function checkNum() {
+        let numMonth = parseInt(document.getElementById("nummonth").value);
+        let year = new Date().getFullYear();
+
+        switch (numMonth) {
+          case 1:
+          case 3:
+          case 5:
+          case 7:
+          case 8:
+          case 10:
+          case 12:
+            document.getElementById(
+              "result"
+            ).textContent = `Tháng ${numMonth} có 31 ngày`;
+            break;
+          case 4:
+          case 6:
+          case 9:
+          case 11:
+            document.getElementById(
+              "result"
+            ).textContent = `Tháng ${numMonth} có 30 ngày`;
+            break;
+          case 2:
+            if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+              document.getElementById(
+                "result"
+              ).textContent = `Tháng ${numMonth} có 29 ngày`;
+            } else {
+              document.getElementById(
+                "result"
+              ).textContent = `Tháng ${numMonth} có 28 ngày`;
+            }
+            break;
+          default:
+            document.getElementById("result").textContent =
+              "Tháng nhập không hợp lệ";
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>
