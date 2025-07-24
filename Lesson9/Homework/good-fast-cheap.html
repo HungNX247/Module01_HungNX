@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Good Fast Cheap Toggle</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="toggle-group">
+        <label class="switch">
+          <input type="checkbox" id="good" />
+          <span class="slider"></span>
+        </label>
+        <span class="toggle-label">GOOD</span>
+      </div>
+      <div class="toggle-group">
+        <label class="switch">
+          <input type="checkbox" id="cheap" />
+          <span class="slider"></span>
+        </label>
+        <span class="toggle-label">CHEAP</span>
+      </div>
+      <div class="toggle-group">
+        <label class="switch">
+          <input type="checkbox" id="fast" />
+          <span class="slider"></span>
+        </label>
+        <span class="toggle-label">FAST</span>
+      </div>
+    </div>
+
+    <script>
+      const good = document.getElementById("good");
+      const cheap = document.getElementById("cheap");
+      const fast = document.getElementById("fast");
+
+      function handleToggle(changed) {
+        const selected = [good, cheap, fast].filter((el) => el.checked);
+        if (selected.length > 2) {
+          for (let el of selected) {
+            if (el !== changed) {
+              el.checked = false;
+              break;
+            }
+          }
+        }
+      }
+
+      good.addEventListener("change", () => handleToggle(good));
+      cheap.addEventListener("change", () => handleToggle(cheap));
+      fast.addEventListener("change", () => handleToggle(fast));
+    </script>
+  </body>
+</html>
