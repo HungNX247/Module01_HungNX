@@ -47,6 +47,9 @@
           ).textContent = `Result:Chỉ số BMI là ${BMI}  . Bạn Obese`;
         }
       }
+
+      document.getElementById("weight").addEventListener("input", convertBMI);
+      document.getElementById("height").addEventListener("input", convertBMI);
     </script>
   </body>
 </html>
