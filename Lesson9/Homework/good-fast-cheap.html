@@ -2,53 +2,36 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Good Fast Cheap Toggle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
   </head>
   <body>
-    <div class="container">
-      <div class="toggle-group">
-        <label class="switch">
-          <input type="checkbox" id="good" />
-          <span class="slider"></span>
-        </label>
-        <span class="toggle-label">GOOD</span>
-      </div>
-      <div class="toggle-group">
-        <label class="switch">
-          <input type="checkbox" id="cheap" />
-          <span class="slider"></span>
-        </label>
-        <span class="toggle-label">CHEAP</span>
-      </div>
-      <div class="toggle-group">
-        <label class="switch">
-          <input type="checkbox" id="fast" />
-          <span class="slider"></span>
-        </label>
-        <span class="toggle-label">FAST</span>
-      </div>
-    </div>
+    <h3>Ứng dụng good-fast-cheap</h3>
+    <input type="checkbox" id="good" />GOOD <br />
+    <input type="checkbox" id="fast" />FAST <br />
+    <input type="checkbox" id="cheap" />CHEAP
 
     <script>
       const good = document.getElementById("good");
-      const cheap = document.getElementById("cheap");
       const fast = document.getElementById("fast");
+      const cheap = document.getElementById("cheap");
 
-      function handleToggle(changed) {
-        const selected = [good, cheap, fast].filter((el) => el.checked);
-        if (selected.length > 2) {
-          for (let el of selected) {
-            if (el !== changed) {
-              el.checked = false;
+      function checkStage(change) {
+        const check = [good, cheap, fast].filter((c) => c.checked);
+
+        if (check.length > 2) {
+          for (let c of check) {
+            if (c !== change) {
+              c.checked = false;
               break;
             }
           }
         }
       }
 
-      good.addEventListener("change", () => handleToggle(good));
-      cheap.addEventListener("change", () => handleToggle(cheap));
-      fast.addEventListener("change", () => handleToggle(fast));
+      good.addEventListener("change", checkStage);
+      fast.addEventListener("change", checkStage);
+      cheap.addEventListener("change", checkStage);
     </script>
   </body>
 </html>
