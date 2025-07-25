@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>Bài 2: Chuyển từ mét sang feet</h3>
+    Số mét <input type="number" id="meter" />
+    <button id="convertbtn">Chuyển đổi sang feet</button>
+    <p id="result"></p>
+
+    <script>
+      let convertBtn = document.getElementById("convertbtn");
+
+      function convertFeet() {
+        let meter = parseFloat(document.getElementById("meter").value);
+
+        if (meter < 0 || isNaN(meter)) {
+          document.getElementById("result").textContent =
+            "Lỗi: dữ liệu không hợp lệ. Vui lòng nhập lại";
+          return;
+        }
+
+        let feet = 0;
+        feet = meter * 3.2808;
+        document.getElementById(
+          "result"
+        ).textContent = `Result: Số feet là ${feet} ft`;
+      }
+
+      convertBtn.addEventListener("click", convertFeet);
+      document.getElementById("meter").addEventListener("input", convertFeet);
+    </script>
+  </body>
+</html>
