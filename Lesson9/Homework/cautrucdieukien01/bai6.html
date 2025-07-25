@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>Bài 6: Tính hoa hồng nhận được dựa trên mức doanh số bán hàng.</h3>
+    Doanh số bán hàng: <input type="number" id="saleamount" />
+    <button id="checkbtn">Kiểm tra tiền hoa hồng</button>
+    <p id="resultcommissionrate"></p>
+    <p id="resultcommissionamount"></p>
+
+    <script>
+      let checkCommissionBtn = document.getElementById("checkbtn");
+
+      function checkCommission() {
+        let salesAmount = parseFloat(
+          document.getElementById("saleamount").value
+        );
+
+        let commissionRate = 0;
+        let commissionAmount = 0;
+
+        if (salesAmount < 0 || isNaN(salesAmount)) {
+          document.getElementById("result").textContent =
+            "Số tiền nhập không hợp lệ. Vui lòng nhập lại";
+        } else if (salesAmount < 10000000) {
+          commissionRate = 0;
+        } else if (salesAmount < 50000000) {
+          commissionRate = 0.05;
+        } else if (salesAmount < 100000000) {
+          commissionRate = 0.08;
+        } else {
+          commissionRate = 0.1;
+        }
+        commissionAmount = salesAmount * commissionRate;
+
+        document.getElementById(
+          "resultcommissionrate"
+        ).textContent = `Tỷ lệ hoa hồng là ${commissionRate * 100}%`;
+
+        document.getElementById(
+          "resultcommissionamount"
+        ).textContent = `Tiền hoa hồng là ${commissionAmount} VNĐ`;
+      }
+      checkCommissionBtn.addEventListener("click", checkCommission);
+      document
+        .getElementById("saleamount")
+        .addEventListener("input", checkCommission);
+    </script>
+  </body>
+</html>

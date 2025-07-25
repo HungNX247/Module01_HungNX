@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>
+      Bài 4:Nhập 3 số nguyên, tìm và in ra giá trị lớn nhất trong ba số đó.
+    </h3>
+    Số nguyên a: <input type="number" id="number1" /><br /><br />
+    Số nguyên b: <input type="number" id="number2" /><br /><br />
+    Số nguyên c: <input type="number" id="number3" /><br /><br />
+    <button id="checkBtn">Kiểm tra</button>
+    <p id="result"></p>
+
+    <script>
+      let checkBtn = document.getElementById("checkBtn");
+      function checkMaxNumber() {
+        let numBer1 = parseFloat(document.getElementById("number1").value);
+        if (isNaN(numBer1)) {
+          numBer1 = 0;
+        }
+        let numBer2 = parseFloat(document.getElementById("number2").value);
+        if (isNaN(numBer2)) {
+          numBer2 = 0;
+        }
+        let numBer3 = parseFloat(document.getElementById("number3").value);
+        if (isNaN(numBer3)) {
+          numBer3 = 0;
+        }
+        if (numBer1 > numBer2) {
+          if (numBer1 > numBer3) {
+            document.getElementById(
+              "result"
+            ).textContent = `Result: ${numBer1} là giá trị lớn nhất`;
+          } else {
+            document.getElementById(
+              "result"
+            ).textContent = `Result: ${numBer3} là giá trị lớn nhất`;
+          }
+        } else if (numBer2 > numBer3) {
+          document.getElementById(
+            "result"
+          ).textContent = `Result: ${numBer2} là giá trị lớn nhất`;
+        } else {
+          document.getElementById(
+            "result"
+          ).textContent = `Result: ${numBer3} là giá trị lớn nhất`;
+        }
+      }
+
+      checkBtn.addEventListener("click", checkMaxNumber);
+    </script>
+  </body>
+</html>

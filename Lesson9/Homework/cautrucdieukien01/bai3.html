@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>
+      Bài 3:Nhập một số nguyên bất kỳ, in ra kết quả để xác định số đó lớn hơn,
+      nhỏ hơn hay bằng 0
+    </h3>
+    Nhập số nguyên: <input type="number" id="number" placeholder="Nhập số" />
+    <button id="checkbtn">Kiểm tra</button>
+    <p id="result"></p>
+
+    <script>
+      let checkBtn = document.getElementById("checkbtn");
+      function checkNuber() {
+        let numBer = parseFloat(document.getElementById("number").value);
+
+        if (numBer === 0) {
+          document.getElementById(
+            "result"
+          ).textContent = `Result: ${numBer} là số 0`;
+        } else if (numBer > 0) {
+          document.getElementById(
+            "result"
+          ).textContent = `Result: ${numBer} là số dương. Số dương luôn lớn hơn 0`;
+        } else {
+          document.getElementById(
+            "result"
+          ).textContent = `Result: ${numBer} là số âm. Số âm luôn nhỏ hơn 0`;
+        }
+      }
+
+      checkBtn.addEventListener("click", checkNuber);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>
+      Bài 2: Nhập tuổi, kiểm tra và in kết quả xem học sinh có đủ điều kiện vào
+      học lớp 10 hay không.
+    </h3>
+    Nhập tuổi: <input type="number" id="age" /> <br /><br />
+    <button id="checkbtn">Kiểm tra</button>
+    <p id="result"></p>
+    <script>
+      let checkBtn = document.getElementById("checkbtn");
+
+      function checkAgeStudent() {
+        let ageStudent = parseInt(document.getElementById("age").value);
+        if (ageStudent <= 0) {
+          document.getElementById("result").textContent =
+            "Lỗi: Tuổi nhập không hợp lệ, vui lòng nhập lại";
+        } else if (ageStudent >= 15) {
+          document.getElementById("result").textContent =
+            "Result: Đủ điều kiện vào học lớp 10";
+        } else {
+          document.getElementById("result").textContent =
+            "Result: Không điều kiện vào học lớp 10";
+        }
+      }
+      checkBtn.addEventListener("click", checkAgeStudent);
+    </script>
+  </body>
+</html>

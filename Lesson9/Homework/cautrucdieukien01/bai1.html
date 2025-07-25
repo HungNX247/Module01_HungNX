@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>
+      Bài 1: Nhập hai số a và b, kiểm tra xem a có chia hết cho b hay không.
+    </h3>
+
+    Nhập số a: <input type="number" id="numbera" /> <br />
+    <br />
+    Nhập số b:
+    <input type="number" id="numberb" /> <br /><br />
+    <button id="checkbtn">Kiểm tra</button>
+    <p id="result"></p>
+
+    <script>
+      let checkBtn = document.getElementById("checkbtn");
+
+      function checkDivisibility() {
+        let a = parseFloat(document.getElementById("numbera").value);
+        let b = parseFloat(document.getElementById("numberb").value);
+
+        if (a % b == 0) {
+          document.getElementById(
+            "result"
+          ).textContent = `Result: ${a} chia hết cho ${b}`;
+        } else {
+          document.getElementById(
+            "result"
+          ).textContent = `Result: ${a} không chia hết cho ${b}`;
+        }
+      }
+      checkBtn.addEventListener("click", checkDivisibility);
+    </script>
+  </body>
+</html>

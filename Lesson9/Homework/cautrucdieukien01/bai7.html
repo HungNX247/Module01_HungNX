@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>
+      Bài 7: Tính cước điện thoại cho một hộ gia đình dựa trên các thông số được
+      cung cấp
+    </h3>
+    Số phút sử dụng <input type="number" id="minutesused" />
+    <button id="checkbtn">Tính cước</button>
+    <p id="result"></p>
+
+    <script>
+      const checkBtn = document.getElementById("checkbtn");
+
+      const BASIC_MONTHLY_FEE = 25000;
+      const VAT_RATE = 0.1;
+      const TIER1_RATE = 600;
+      const TIER2_RATE = 400;
+      const TIER3_RATE = 200;
+
+      function caculateFare() {
+        const minutesUsed = parseFloat(
+          document.getElementById("minutesused").value
+        );
+        let totalCallCost = 0;
+
+        if (minutesUsed < 0 || isNaN(minutesUsed)) {
+          document.getElementById("result").textContent =
+            "Lỗi: Số phút nhập không hợp lệ. Vui lòng nhập lại";
+        } else if (minutesUsed < 50) {
+          totalCallCost = minutesUsed * TIER1_RATE;
+        } else if (minutesUsed < 200) {
+          totalCallCost = 50 * TIER1_RATE + (minutesUsed - 50) * TIER2_RATE;
+        } else {
+          totalCallCost =
+            50 * TIER1_RATE +
+            150 * TIER2_RATE +
+            (minutesUsed - 200) * TIER3_RATE;
+        }
+
+        const subtotalBill = totalCallCost + BASIC_MONTHLY_FEE;
+
+        const vatAmount = subtotalBill * VAT_RATE;
+
+        const totalBill = subtotalBill + vatAmount;
+
+        document.getElementById(
+          "result"
+        ).textContent = `Tổng cước là ${totalBill} VND`;
+      }
+
+      checkBtn.addEventListener("click", caculateFare);
+
+      document
+        .getElementById("minutesused")
+        .addEventListener("input", caculateFare);
+    </script>
+  </body>
+</html>

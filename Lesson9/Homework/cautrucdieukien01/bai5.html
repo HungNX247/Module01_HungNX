@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>Bài 5: Xếp loại học lực học sinh</h3>
+    Điểm bài kiểm tra: <input type="text" id="testscore" /><br /><br />
+    Điểm thi giữa kỳ: <input type="text" id="midscore" /><br /><br />
+    Điểm thi cuối kỳ: <input type="text" id="finalscore" /><br /><br />
+    <button id="checkbtn">Kiểm tra</button>
+    <p id="result"></p>
+
+    <script>
+      let checkBtn = document.getElementById("checkbtn");
+
+      function checkAcademic() {
+        let testScore = parseInt(document.getElementById("testscore").value);
+        if (isNaN(testScore)) {
+          testScore = 0;
+        }
+        let midScore = parseInt(document.getElementById("midscore").value);
+        if (isNaN(midScore)) {
+          midScore = 0;
+        }
+        let finalScore = parseInt(document.getElementById("finalscore").value);
+        if (isNaN(finalScore)) {
+          finalScore = 0;
+        }
+
+        let avgScore = (testScore + midScore * 2 + finalScore * 3) / 6;
+
+        if (testScore < 0 || midScore < 0 || finalScore < 0) {
+          document.getElementById("result").textContent =
+            "Lỗi: điểm số không được nhỏ hơn 0";
+        } else if (avgScore >= 8.0) {
+          document.getElementById(
+            "result"
+          ).textContent = `Result: Điểm trung bình là ${avgScore.toFixed(
+            1
+          )}. Xếp loại học lực Giỏi`;
+        } else if (avgScore >= 6.5) {
+          document.getElementById(
+            "result"
+          ).textContent = `Result: Điểm trung bình là ${avgScore.toFixed(
+            1
+          )}. Xếp loại học lực Khá`;
+        } else if (avgScore >= 5.0) {
+          document.getElementById(
+            "result"
+          ).textContent = `Result: Điểm trung bình là ${avgScore.toFixed(
+            1
+          )}. Xếp loại học lực Trung Bình`;
+        } else {
+          document.getElementById(
+            "result"
+          ).textContent = `Result: Điểm trung bình là ${avgScore.toFixed(
+            1
+          )}. Xếp loại học lực Yếu`;
+        }
+      }
+      checkBtn.addEventListener("click", checkAcademic);
+    </script>
+  </body>
+</html>
