@@ -54,9 +54,12 @@
           tienGiamTruNguoiPhuThuoc -
           tienGiamBaoHiemBatBuoc;
 
-        let thueTNCN;
+        thuNhapChiuThue = Math.max(0, thuNhapChiuThue);
 
-        if (thuNhapChiuThue < 5000001) {
+        let thueTNCN = 0;
+        if (thuNhapChiuThue <= 0) {
+          thueTNCN = 0;
+        } else if (thuNhapChiuThue < 5000001) {
           thueTNCN = thuNhapChiuThue * VAT_BAC_1;
         } else if (thuNhapChiuThue < 10000001) {
           thueTNCN =
@@ -100,24 +103,16 @@
 
         let thuNhapSauThue = thuNhap - tienGiamBaoHiemBatBuoc - thueTNCN;
 
-        if (thueTNCN <= 0) {
-          let thueTNCN = 0;
-          document.getElementById(
-            "tongthuetncn"
-          ).textContent = `1. Tiền thuế TNCN bạn phải đóng là: ${thueTNCN} VND`;
-          document.getElementById(
-            "tongthunhapsauthue"
-          ).textContent = `2. Thu nhập sau thuế của bạn là:${(
-            thuNhap - tienGiamBaoHiemBatBuoc
-          ).toLocaleString()} VND`;
-        } else {
-          document.getElementById(
-            "tongthuetncn"
-          ).textContent = `1. Tiền thuế TNCN bạn phải đóng là: ${thueTNCN.toLocaleString()} VND`;
-          document.getElementById(
-            "tongthunhapsauthue"
-          ).textContent = `2. Thu nhập sau thuế của bạn là: ${thuNhapSauThue.toLocaleString()} VND`;
-        }
+        document.getElementById(
+          "tongthuetncn"
+        ).textContent = `1. Tiền thuế TNCN bạn phải đóng là: ${Number(
+          thueTNCN.toFixed(0)
+        ).toLocaleString()} VND`;
+        document.getElementById(
+          "tongthunhapsauthue"
+        ).textContent = `2. Thu nhập sau thuế của bạn là: ${Number(
+          thuNhapSauThue.toFixed(0)
+        ).toLocaleString()} VND`;
       }
 
       function reSet() {
