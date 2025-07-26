@@ -17,7 +17,7 @@
         let edgeA = parseFloat(document.getElementById("edgea").value);
         let edgeB = parseFloat(document.getElementById("edgeb").value);
 
-        if (isNaN(edgeA) || edgeA < 0 || isNaN(edgeB) || edgeB < 0) {
+        if (isNaN(edgeA) || edgeA <= 0 || isNaN(edgeB) || edgeB <= 0) {
           document.getElementById(
             "result"
           ).textContent = `Result: Chiều dài cạnh hình chữ nhật không hợp lệ, vui lòng nhập lại`;

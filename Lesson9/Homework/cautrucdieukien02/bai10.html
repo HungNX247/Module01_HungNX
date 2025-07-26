@@ -27,7 +27,7 @@
           document.getElementById("electricused").value
         );
 
-        if (electricUsed < 0 || isNaN(electricUsed)) {
+        if (electricUsed <= 0 || isNaN(electricUsed)) {
           document.getElementById("result").textContent =
             "Lỗi: Số điện nhập không hợp lệ. Vui lòng nhập lại";
           return;

@@ -16,7 +16,7 @@
           document.getElementById("squareedge").value
         );
 
-        if (isNaN(squareEdge) || squareEdge < 0) {
+        if (isNaN(squareEdge) || squareEdge <= 0) {
           document.getElementById(
             "result"
           ).textContent = `Result: Chiều dài cạnh hình vuông không hợp lệ, vui lòng nhập lại`;
