@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kiểm tra tuổi</title>
+  </head>
+  <body>
+    <h3>
+      Bài 8: Kiểm tra xem một số nhập vào có phải là tuổi của một người không.
+      Một số nguyên là tuổi của một người khi nhỏ 120 và lơn hơn 0.
+    </h3>
+    Nhập tuổi: <input type="number" id="age" /> <br /><br />
+    <button id="checkbtn">Kiểm tra</button>
+    <p id="result"></p>
+    <script>
+      let checkBtn = document.getElementById("checkbtn");
+
+      function checkAge() {
+        let age = parseInt(document.getElementById("age").value);
+        if (age < 0 || age > 120) {
+          document.getElementById("result").textContent =
+            "Result: Tuổi nhập không hợp lệ";
+        } else {
+          document.getElementById("result").textContent = "Result: Tuổi hợp lệ";
+        }
+      }
+      checkBtn.addEventListener("click", checkAge);
+    </script>
+  </body>
+</html>

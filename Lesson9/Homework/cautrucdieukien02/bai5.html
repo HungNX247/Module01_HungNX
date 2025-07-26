@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diện tích tam giác vuông</title>
+  </head>
+  <body>
+    <h3>Bài 5: Tính diện tích tam giác vuông khi biết 02 cạnh kề a, b</h3>
+    Nhập cạnh a <input type="number" id="edgea" /> <br /><br />
+    Nhập cạnh b
+    <input type="number" id="edgeb" /> <br /><br />
+
+    <p id="result"></p>
+
+    <script>
+      function calculateRightTriangleArea() {
+        let edgeA = parseFloat(document.getElementById("edgea").value);
+        let edgeB = parseFloat(document.getElementById("edgeb").value);
+
+        if (isNaN(edgeA) || edgeA < 0 || isNaN(edgeB) || edgeB < 0) {
+          document.getElementById(
+            "result"
+          ).textContent = `Result: Chiều dài cạnh tam giác vuông không hợp lệ, vui lòng nhập lại`;
+          return;
+        }
+
+        let rightTriangleArea = (edgeA * edgeB) / 2;
+
+        document.getElementById(
+          "result"
+        ).textContent = `Result: Diện tích tam giác vuông là ${rightTriangleArea.toFixed(
+          2
+        )}`;
+      }
+
+      document
+        .getElementById("edgea")
+        .addEventListener("input", calculateRightTriangleArea);
+      document
+        .getElementById("edgeb")
+        .addEventListener("input", calculateRightTriangleArea);
+    </script>
+  </body>
+</html>

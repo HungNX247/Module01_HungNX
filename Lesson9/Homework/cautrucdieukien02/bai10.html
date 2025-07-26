@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tính giá điện</title>
+  </head>
+  <body>
+    <h3>Bài 10: Viết chương trình tính giá điện</h3>
+    Số điện sử dụng <input type="number" id="electricused" />
+    <button id="checkbtn">Tính tiền điện</button>
+    <p id="result"></p>
+
+    <script>
+      const checkBtn = document.getElementById("checkbtn");
+
+      const VAT_RATE = 0.1;
+      const TIER1_RATE = 1984;
+      const TIER2_RATE = 2050;
+      const TIER3_RATE = 2380;
+      const TIER4_RATE = 2998;
+      const TIER5_RATE = 3350;
+      const TIER6_RATE = 3460;
+
+      function calculateElictric() {
+        const electricUsed = parseInt(
+          document.getElementById("electricused").value
+        );
+
+        if (electricUsed < 0 || isNaN(electricUsed)) {
+          document.getElementById("result").textContent =
+            "Lỗi: Số điện nhập không hợp lệ. Vui lòng nhập lại";
+          return;
+        }
+
+        let totalCost = 0;
+
+        if (electricUsed < 51) {
+          totalCost = electricUsed * TIER1_RATE;
+        } else if (electricUsed < 101) {
+          totalCost = 50 * TIER1_RATE + (electricUsed - 50) * TIER2_RATE;
+        } else if (electricUsed < 201) {
+          totalCost =
+            50 * TIER1_RATE +
+            50 * TIER2_RATE +
+            (electricUsed - 100) * TIER3_RATE;
+        } else if (electricUsed < 301) {
+          totalCost =
+            50 * TIER1_RATE +
+            50 * TIER2_RATE +
+            100 * TIER3_RATE +
+            (electricUsed - 200) * TIER4_RATE;
+        } else if (electricUsed < 401) {
+          totalCost =
+            50 * TIER1_RATE +
+            50 * TIER2_RATE +
+            100 * TIER3_RATE +
+            100 * TIER4_RATE +
+            (electricUsed - 300) * TIER5_RATE;
+        } else {
+          totalCost =
+            50 * TIER1_RATE +
+            50 * TIER2_RATE +
+            100 * TIER3_RATE +
+            100 * TIER4_RATE +
+            100 * TIER5_RATE +
+            (electricUsed - 400) * TIER6_RATE;
+        }
+
+        const vatAmount = totalCost * VAT_RATE;
+
+        const totalBill = totalCost + vatAmount;
+
+        document.getElementById(
+          "result"
+        ).textContent = `Tổng tiền điện của bạn là ${totalBill.toLocaleString()} VND`;
+      }
+
+      checkBtn.addEventListener("click", calculateElictric);
+
+      document
+        .getElementById("electricused")
+        .addEventListener("input", calculateElictric);
+    </script>
+  </body>
+</html>

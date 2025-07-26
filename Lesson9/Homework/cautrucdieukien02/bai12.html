@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tính lãi ngân hàng</title>
+  </head>
+  <body>
+    <h3>Bài 12: Tính lãi ngân hàng (lãi mẹ đẻ lãi con)</h3>
+    Số tiền gốc (VNĐ) <input type="number" id="principal" /><br /><br />
+    Lãi suất tháng (%)
+    <input type="number" id="interestrate" /><br /><br />
+    Kỳ hạn gửi (tháng) <input type="number" id="depositterm" /><br /><br />
+    <button id="checkbtn">Kiểm tra</button>
+    <p id="result"></p>
+    <p id="interestEarned"></p>
+
+    <script>
+      let checkBtn = document.getElementById("checkbtn");
+      function calCuLate() {
+        const prinCipal = parseFloat(
+          document.getElementById("principal").value
+        );
+        const interestRate =
+          parseFloat(document.getElementById("interestrate").value) / 100;
+        const depositTerm = parseInt(
+          document.getElementById("depositterm").value
+        );
+
+        if (
+          isNaN(prinCipal) ||
+          prinCipal <= 0 ||
+          isNaN(interestRate) ||
+          interestRate <= 0 ||
+          isNaN(depositTerm) ||
+          depositTerm <= 0
+        ) {
+          document.getElementById(
+            "result"
+          ).textContent = `Result: Dữ liệu nhập không hợp lệ. Vui lòng nhập lại`;
+          document.getElementById("interestEarned").textContent = "";
+          return;
+        }
+
+        const totalAmount = prinCipal * Math.pow(1 + interestRate, depositTerm);
+        const interestEarned = totalAmount - prinCipal;
+
+        document.getElementById(
+          "result"
+        ).textContent = `1. Tổng tiền sau ${depositTerm} tháng là: ${Number(
+          totalAmount.toFixed(0)
+        ).toLocaleString()} VND`;
+
+        document.getElementById(
+          "interestEarned"
+        ).textContent = `2. Số tiền lãi sau ${depositTerm} tháng là: ${Number(
+          interestEarned.toFixed(0)
+        ).toLocaleString()} VND`;
+      }
+
+      checkBtn.addEventListener("click", calCuLate);
+
+      document.getElementById("principal").addEventListener("input", calCuLate);
+      document
+        .getElementById("interestrate")
+        .addEventListener("input", calCuLate);
+      document
+        .getElementById("depositterm")
+        .addEventListener("input", calCuLate);
+    </script>
+  </body>
+</html>

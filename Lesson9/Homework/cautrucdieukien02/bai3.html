@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diện tích hình vuông</title>
+  </head>
+  <body>
+    <h3>Bài 3: Tính diện tích hình vuông khi biết cạnh a</h3>
+    Nhập cạnh a <input type="number" id="squareedge" />
+    <p id="result"></p>
+
+    <script>
+      function calculateSquareArea() {
+        let squareEdge = parseFloat(
+          document.getElementById("squareedge").value
+        );
+
+        if (isNaN(squareEdge) || squareEdge < 0) {
+          document.getElementById(
+            "result"
+          ).textContent = `Result: Chiều dài cạnh hình vuông không hợp lệ, vui lòng nhập lại`;
+          return;
+        }
+
+        let squareArea = squareEdge * squareEdge;
+
+        document.getElementById(
+          "result"
+        ).textContent = `Result: Diện tích hình vuông là ${squareArea.toFixed(
+          2
+        )}`;
+      }
+      document
+        .getElementById("squareedge")
+        .addEventListener("input", calculateSquareArea);
+    </script>
+  </body>
+</html>

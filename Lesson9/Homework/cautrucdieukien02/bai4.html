@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diện tích hình chữ nhật</title>
+  </head>
+  <body>
+    <h3>Bài 4: Tính diện tích hình chữ nhật khi biết 02 cạnh a, b</h3>
+    Nhập cạnh a <input type="number" id="edgea" /> <br /><br />
+    Nhập cạnh b
+    <input type="number" id="edgeb" /> <br /><br />
+    <p id="result"></p>
+
+    <script>
+      function calculateRectangularArea() {
+        let edgeA = parseFloat(document.getElementById("edgea").value);
+        let edgeB = parseFloat(document.getElementById("edgeb").value);
+
+        if (isNaN(edgeA) || edgeA < 0 || isNaN(edgeB) || edgeB < 0) {
+          document.getElementById(
+            "result"
+          ).textContent = `Result: Chiều dài cạnh hình chữ nhật không hợp lệ, vui lòng nhập lại`;
+          return;
+        }
+
+        let rectangularArea = edgeA * edgeB;
+
+        document.getElementById(
+          "result"
+        ).textContent = `Result: Diện tích hình vuông là ${rectangularArea.toFixed(
+          2
+        )}`;
+      }
+      document
+        .getElementById("edgea")
+        .addEventListener("input", calculateRectangularArea);
+      document
+        .getElementById("edgeb")
+        .addEventListener("input", calculateRectangularArea);
+    </script>
+  </body>
+</html>

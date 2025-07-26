@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bài 7: Giải phương trình bậc 2</title>
+  </head>
+  <body>
+    <h2>Giải phương trình ax² + bx + c = 0</h2>
+
+    <label>a: <input type="number" id="a" /></label><br />
+    <br />
+    <label>b: <input type="number" id="b" /></label><br /><br />
+    <label>c: <input type="number" id="c" /></label><br /><br />
+
+    <button onclick="giai()">Giải phương trình</button>
+
+    <p id="ketqua"></p>
+
+    <script>
+      function giai() {
+        const a = parseFloat(document.getElementById("a").value);
+        const b = parseFloat(document.getElementById("b").value);
+        const c = parseFloat(document.getElementById("c").value);
+
+        let kq = "";
+
+        if (a === 0) {
+          kq = "Đây không phải phương trình bậc 2";
+        } else {
+          const delta = b * b - 4 * a * c;
+          if (delta < 0) {
+            kq = "Phương trình vô nghiệm";
+          } else if (delta === 0) {
+            const x = -b / (2 * a);
+            kq = "Phương trình có nghiệm kép: x = " + x;
+          } else {
+            const x1 = (-b + Math.sqrt(delta)) / (2 * a);
+            const x2 = (-b - Math.sqrt(delta)) / (2 * a);
+            kq = `Phương trình có 2 nghiệm phân biệt: x₁ = ${x1}, x₂ = ${x2}`;
+          }
+        }
+
+        document.getElementById("ketqua").innerText = kq;
+      }
+    </script>
+  </body>
+</html>
