@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>Bảng cửu chương</h3>
+    <p id="result"></p>
+
+    <script>
+      let sout = "<table border = '1'>";
+      for (let i = 1; i <= 10; i++) {
+        sout += "<tr>";
+        for (let j = 1; j <= 10; j++) {
+          sout += `<td>${i} x ${j} = ${i * j}</td> `;
+        }
+        sout += "</tr>";
+      }
+      sout += "</table>";
+      document.getElementById("result").innerHTML = sout;
+    </script>
+  </body>
+</html>
