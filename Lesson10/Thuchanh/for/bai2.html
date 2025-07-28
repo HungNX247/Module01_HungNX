@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>
+      Bài 2: Viết chương trình nhập vào một số bất kỳ lớn hơn 0. Tính tổng các
+      phần tử từ 1 đến số vừa nhập vào.
+    </h3>
+    Nhập số <input id="number" type="number" />
+    <button id="calculatebtn">Tính toán</button>
+    <p id="result"></p>
+    <script>
+      let calculateBtn = document.getElementById("calculatebtn");
+      function calCulate() {
+        let num = parseFloat(document.getElementById("number").value);
+        let total = 0;
+        for (let i = 1; i <= num; i++) {
+          total = total + i;
+        }
+        document.getElementById(
+          "result"
+        ).textContent = `Tổng các phần tử là: ${total}`;
+      }
+      calculateBtn.addEventListener("click", calCulate);
+    </script>
+  </body>
+</html>

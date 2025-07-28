@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>
+      Bài 1: Viết chương trình hiển thị chuỗi “The number is N” 5 lần sử dụng
+      vòng lặp for. Với N sẽ hiển thị từ 0 đến 5.
+    </h3>
+    <p id="result"></p>
+
+    <script>
+      let i;
+      let text = "";
+      for (let i = 0; i < 5; i++) {
+        text += "The number is " + i + "<br>";
+      }
+      document.getElementById("result").innerHTML = text;
+    </script>
+  </body>
+</html>
