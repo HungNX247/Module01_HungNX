@@ -8,15 +8,18 @@
   <body>
     <p id="result"></p>
     <script>
-      let result = "";
-      for (let i = 1; i <= 100; i++) {
-        result += i + "<br>";
+      let count = 0;
+      let num = 1;
+      let sum = 0;
+      while (count < 30) {
+        if (num % 7 === 0) {
+          sum += num;
 
-        document.getElementById("result").innerHTML = result;
-        if (i === 99) {
-          alert("Bạn đã hoàn thành");
+          count++;
         }
+        num++;
       }
+      document.getElementById("result").innerHTML = sum;
     </script>
   </body>
 </html>

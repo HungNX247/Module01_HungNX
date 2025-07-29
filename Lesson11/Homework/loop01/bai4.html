@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="result"></p>
+    <script>
+      function firstFibonacciDivisibleBy5() {
+        let a = 0,
+          b = 1;
+        let count = 0;
+        while (count < 20) {
+          let next = a + b;
+          if (next % 5 === 0) {
+            return next;
+          }
+          a = b;
+          b = next;
+        }
+      }
+      document.getElementById(
+        "result"
+      ).textContent = `${firstFibonacciDivisibleBy5()}`;
+    </script>
+  </body>
+</html>

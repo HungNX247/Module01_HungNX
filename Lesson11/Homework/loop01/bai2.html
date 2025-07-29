@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let temp = parseFloat(prompt("Nhap nhiet do"));
+      while (temp < 20 || temp > 100) {
+        if (temp < 20) {
+          alert("Vui long tang nhiet do");
+        } else if (temp > 100) {
+          alert("Vui long giam nhiet do");
+        }
+        temp = parseFloat(prompt("Nhap lai nhiet do"));
+      }
+      alert("Nhiet do hop ly");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="startbtn" onclick="startGame()">Bắt đầu</button>
+    <script>
+      function startGame() {
+        let guessingRange = parseInt(prompt("Nhập vào khoảng muốn đoán"));
+        let soBiMat = Math.floor(Math.random() * guessingRange);
+
+        let soLanDoan = 3;
+        while (soLanDoan > 0) {
+          let doan = parseInt(prompt("Nhập số bạn đoán"));
+          if (doan > soBiMat) {
+            alert("Số lần đoán lớn hơn số bí mật");
+          } else if (doan < soBiMat) {
+            alert("Số bạn đoán nhỏ hơn số bí mật");
+          } else {
+            alert("Chính xác. Bạn đã đoán đúng");
+            return;
+          }
+          soLanDoan--;
+        }
+        alert(`Bạn đã hết lượt đoán. Số bí mật là : ${soBiMat}`);
+      }
+    </script>
+  </body>
+</html>
