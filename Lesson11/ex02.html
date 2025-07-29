@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>In tam giác vuông</title>
+    <style>
+      pre {
+        font-family: monospace;
+        line-height: 1.2;
+      }
+    </style>
+  </head>
+  <body>
+    <pre id="output"></pre>
+
+    <script>
+      let n = 5;
+      let result = "";
+
+      // Góc vuông ở dưới bên trái
+      for (let i = 1; i <= n; i++) {
+        result += "*".repeat(i) + "\n";
+      }
+      result += "\n";
+
+      // Góc vuông ở trên bên trái
+      for (let i = n; i >= 1; i--) {
+        result += "*".repeat(i) + "\n";
+      }
+      result += "\n";
+
+      // Góc vuông ở dưới bên phải
+      for (let i = 1; i <= n; i++) {
+        result += " ".repeat(n - i) + "*".repeat(i) + "\n";
+      }
+      result += "\n";
+
+      // Góc vuông ở trên bên phải
+      for (let i = n; i >= 1; i--) {
+        result += " ".repeat(n - i) + "*".repeat(i) + "\n";
+      }
+
+      document.getElementById("output").textContent = result;
+    </script>
+  </body>
+</html>
