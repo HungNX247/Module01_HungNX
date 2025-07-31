@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const students = [
+        { name: "An", age: 18 },
+        { name: "Bình", age: 16 },
+        { name: "Huy", age: 20 },
+        { name: "Tú", age: 17 },
+      ];
+
+      const newArr = students.filter((student) => student.age >= 18);
+      newArr.forEach((student) => {
+        document.write(student.name + "-" + student.age + " ");
+      });
+    </script>
+  </body>
+</html>

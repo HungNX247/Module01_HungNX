@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const students = [
+        { name: "Mai", age: 18 },
+        { name: "Hùng", age: 19 },
+        { name: "Tú", age: 20 },
+      ];
+
+      // 👉 Yêu cầu: Tính tổng số tuổi của tất cả học sinh
+
+      const totalAge = students.reduce((sum, student) => sum + student.age, 0);
+
+      document.write(`Tổng số tuổi học sinh là: ${totalAge} tuổi`);
+    </script>
+  </body>
+</html>

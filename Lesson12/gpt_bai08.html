@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const students = [
+        { name: "Nam", age: 18 },
+        { name: "An", age: 19 },
+        { name: "Bình", age: 18 },
+        { name: "Huy", age: 20 },
+      ];
+
+      // 👉 Kết quả mong muốn: { 18: 2, 19: 1, 20: 1 }
+
+      //✅ Cách 1 – Dùng reduce()
+      const countByAge = students.reduce((acc, student) => {
+        acc[student.age] = (acc[student.age] || 0) + 1;
+        return acc;
+      }, {});
+      for (let age in countByAge) {
+        document.write(`${age} : ${countByAge[age]}, `);
+      }
+      document.write("<hr>");
+
+      //✅ Cách 2 – for...of
+      const countByAge2 = {};
+      for (const student of students) {
+        if (countByAge2[student.age]) {
+          countByAge2[student.age]++;
+        } else {
+          countByAge[student.age] = 1;
+        }
+
+        for (let age in countByAge2) {
+          document.write(`${age} : ${countByAge2[age]}, `);
+        }
+      }
+
+      //✅ Cách 3 – forEach()
+      const countByAge3 = {};
+      students.forEach((student) => {
+        countByAge3[student.age] = (countByAge3[student.age] || 0) + 1;
+      });
+
+      for (const age in countByAge3) {
+        document.write(
+          "Tuổi " + age + ": " + countByAge3[age] + " học sinh<br>"
+        );
+      }
+    </script>
+  </body>
+</html>

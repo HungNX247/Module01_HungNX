@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="result"></div>
+    <script>
+      const students = [
+        { name: "Mai", age: 18 },
+        { name: "Lan", age: 17 },
+        { name: "Hà", age: 19 },
+      ];
+
+      // 👉 Trả ra mảng mới chỉ gồm tên ["Mai", "Lan", "Hà"]
+
+      //✅ Cách 1 – map() + forEach()
+      const names = students.map((s) => s.name);
+      names.forEach((name) => document.write("<li>" + name + "</li>"));
+
+      //✅ Cách 2 – for...of
+      for (const student of students) {
+        document.write("<li>" + student.name + "</li>");
+      }
+
+      //✅ Cách 3 – for thường (dùng chỉ số)
+
+      for (let i = 0; i < students.length; i++) {
+        document.write("<li>" + students[i].name + "</li>");
+      }
+
+      //✅ Cách 4 – forEach() trực tiếp lên mảng gốc
+      students.forEach((student) =>
+        document.write("<li>" + student.name + "</li>")
+      );
+
+      //✅ Cách 5 – reduce() để tạo HTML string
+      const html = students.reduce((acc, s) => acc + `<li> ${s.name}</li>`, "");
+      document.write(`<ul> ${html} </ul>`);
+
+      //✅ Cách 6 – map().join() để sinh ra danh sách li
+
+      const html1 = students.map((s) => `<li> ${s.name} </li>`).join("");
+      document.write(`<ul> ${html1} </ul>`);
+
+      //✅ Cách 7 – Dùng innerHTML thay vì document.write() (chuyên nghiệp hơn)
+      const html2 = students.map((s) => `<li> ${s.name} </li>`).join("");
+      document.getElementById("result").innerHTML = `<ul> ${html2} </ul>`;
+    </script>
+  </body>
+</html>

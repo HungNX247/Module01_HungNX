@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const people = [
+        { name: "Nam", age: 22 },
+        { name: "Linh", age: 30 },
+        { name: "Tuấn", age: 27 },
+      ];
+
+      // 👉 Yêu cầu: Viết hàm tìm ra người có tuổi lớn nhất
+      const oldest = people.reduce((max, person) => {
+        return person.age > max.age ? person : max;
+      });
+
+      document.writeln(
+        `Người lớn tuổi nhất là: ${oldest.name} - ${oldest.age} tuổi`
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const students = [
+        { name: "Tèo", age: 18 },
+        { name: "Tí", age: 20 },
+        { name: "Bin", age: 16 },
+      ];
+
+      // 👉 Kiểm tra xem tất cả học sinh có trên 17 tuổi không
+
+      // Dùng reduce
+      const allAbove17 = students.reduce((acc, student) => {
+        return acc && student.age > 17;
+      }, true);
+      if (allAbove17) {
+        document.write(`Tất cả học sinh đều trên 17 tuổi`);
+      } else {
+        document.write(`Có học sinh dưới 18 tuổi`);
+      }
+
+      //Dùng filter
+
+      const under18 = students.filter((student) => student.age <= 17);
+      let result02 = under18.length === 0;
+
+      document.write(result02 ? "Yes" : "No");
+
+      //Dùng every()
+
+      const result03 = students.every((student) => student.age > 17);
+      document.write(result03 ? "Đúng" : "Sai");
+
+      //Dùng for....of
+      let result04 = true;
+      for (const student of students) {
+        if (student.age <= 17) {
+          result04 = false;
+          break;
+        }
+        document.write(result04 ? "Yes" : "Không đúng");
+      }
+    </script>
+  </body>
+</html>
