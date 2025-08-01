@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //🔹 7. Gom tên học sinh ra chuỗi cách nhau bởi dấu ,
+      const students = [
+        { name: "An", score: 6 },
+        { name: "Bình", score: 8 },
+        { name: "Ha", score: 5 },
+        { name: "Hue", score: 4 },
+        { name: "Huyen", score: 3 },
+      ];
+      let result = "";
+      for (const student of students) {
+        if (result !== "") {
+          result += ", ";
+        }
+        result += student.name;
+      }
+      document.write(result);
+    </script>
+  </body>
+</html>

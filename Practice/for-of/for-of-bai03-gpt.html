@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //🔹 3. Tạo mảng tuổi từ mảng học sinh
+      const students = [
+        { name: "An", age: 18 },
+        { name: "Bình", age: 19 },
+        { name: "Hà", age: 17 },
+      ];
+      const age = [];
+      for (const student of students) {
+        age.push(student.age);
+      }
+      document.write("Mảng tuổi:" + "[" + age.join(", ") + "]");
+    </script>
+  </body>
+</html>

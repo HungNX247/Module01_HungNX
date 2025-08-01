@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //🔹 5. Kiểm tra xem có học sinh nào chưa đủ 18 tuổi
+      const students = [
+        { name: "An", age: 18 },
+        { name: "Bình", age: 19 },
+        { name: "Hà", age: 17 },
+        { name: "Tú", age: 20 },
+      ];
+      let check = false;
+      for (const student of students) {
+        if (student.age < 18) {
+          check = true;
+          break;
+        }
+      }
+
+      if (check) {
+        document.write("Có học sinh chưa đủ 18 tuổi");
+      } else {
+        document.write("Tất cả học sinh đều từ 18 tuổi trở lên");
+      }
+    </script>
+  </body>
+</html>

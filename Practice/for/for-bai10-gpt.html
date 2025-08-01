@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //✅ 9. Xoá phần tử có giá trị bằng X
+      const data = [1, 3, 5, 3, 7];
+      const x = 3;
+      const filtered = [];
+      for (let i = 0; i < data.length; i++) {
+        if (data[i] !== x) {
+          filtered.push(data[i]);
+        }
+      }
+      document.write("Sau khi xoa " + x + ":" + filtered.join(", "));
+    </script>
+  </body>
+</html>

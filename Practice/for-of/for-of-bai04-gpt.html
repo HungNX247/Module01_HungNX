@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //🔹 4. Tìm học sinh đầu tiên có tuổi > 18
+      const students = [
+        { name: "An", age: 18 },
+        { name: "Bình", age: 19 },
+        { name: "Hà", age: 17 },
+      ];
+      let found = null;
+      for (const student of students) {
+        if (student.age > 18) {
+          found = student;
+          break;
+        }
+      }
+      if (found) {
+        document.write(
+          `Học sinh đầu tiên trên 18 tuổi là: ${found.name} - Tuổi: ${found.age}`
+        );
+      } else {
+        document.write("Không có học sinh nào trên 18 tuổi");
+      }
+    </script>
+  </body>
+</html>

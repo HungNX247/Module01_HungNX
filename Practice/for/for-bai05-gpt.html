@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //✅ 5. Tìm phần tử đầu tiên lớn hơn 10
+      const numbers = [3, 7, 11, 5];
+      let found = null;
+      for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] > 10) {
+          found = numbers[i];
+          break;
+        }
+      }
+
+      document.write("Số đầu tiên lớn hơn 10 là: " + found);
+    </script>
+  </body>
+</html>

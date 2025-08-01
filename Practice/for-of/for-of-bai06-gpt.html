@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //🔹 6. Tăng điểm cho mỗi học sinh mà không thay đổi gốc
+      const students = [
+        { name: "An", score: 6 },
+        { name: "Bình", score: 8 },
+        { name: "Ha", score: 5 },
+        { name: "Hue", score: 4 },
+      ];
+      const newStudents = [];
+      for (const stdudent of students) {
+        newStudents.push({
+          name: stdudent.name,
+          score: stdudent.score + 1,
+        });
+      }
+      newStudents.forEach((s) => {
+        document.write(`${s.name}: ${s.score} <br>`);
+      });
+    </script>
+  </body>
+</html>
