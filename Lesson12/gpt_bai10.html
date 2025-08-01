@@ -14,6 +14,14 @@
       ];
 
       // 👉 Sắp xếp mảng theo tuổi từ nhỏ đến lớn
+
+      students.sort((a, b) => a.age - b.age); //sort tang dan
+      students.sort((a, b) => b.age - a.age); //sort giam dan
+      students.sort((a, b) => a.name.localeCompare(b.name)); //sort name alphabet
+
+      students.forEach((student) => {
+        document.write(`${student.name} - Tuổi: ${student.age} <br>`);
+      });
     </script>
   </body>
 </html>

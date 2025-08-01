@@ -13,6 +13,50 @@
       ];
 
       // 👉 Thêm thuộc tính mới `score: 0` cho từng học sinh
+
+      //✅ Cách 1 – Dùng .map()
+      let newStudents = students.map((stdudent) => {
+        return {
+          ...stdudent,
+          score: 0,
+        };
+      });
+
+      newStudents.forEach((s) => {
+        document.write(`${s.name} - Age: ${s.age} - Score: ${s.score} <br>`);
+      });
+
+      //✅ Cách 2 – Dùng forEach()
+      students.forEach((stdudent) => {
+        stdudent.score = 0;
+      });
+      students.forEach((s) => {
+        document.write(
+          `<li> ${s.name} - Tuoi: ${s.age} - Diem: ${s.score} </li>`
+        );
+      });
+
+      //✅ ✅ Cách 3 – Dùng for...of
+
+      for (const student of students) {
+        student.score = 0;
+      }
+
+      for (const s of students) {
+        document.write(
+          `<ol>${s.name} - Tuổi: ${s.age} - Điểm: ${s.score}</ol>`
+        );
+      }
+
+      //Cách 4 – reduce() để tạo mảng mới
+      const newStudents2 = students.reduce((arr, s) => {
+        arr.push({ ...s, score: 0 });
+        return arr;
+      }, []);
+
+      newStudents2.forEach((s) => {
+        document.write(`${s.name} - Age: ${s.age} - Điểm: ${s.score} <br>`);
+      });
     </script>
   </body>
 </html>
