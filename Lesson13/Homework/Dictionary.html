@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let englishWords = ["hello", "book", "computer", "apple", "school"];
+      let vietnameseWords = [
+        "xin chào",
+        "quyển sách",
+        "máy tính",
+        "quả táo",
+        "trường học",
+      ];
+
+      let input = prompt("Nhập từ tiếng anh muốn tra nghĩa:");
+      let keyword = input.toLowerCase();
+      let index = englishWords.indexOf(keyword);
+
+      if (index != -1) {
+        alert(
+          `Nghĩa của tiếng Việt của "${input}" là: ${vietnameseWords[index]}`
+        );
+      } else {
+        alert("Không tìm thấy");
+      }
+    </script>
+  </body>
+</html>
