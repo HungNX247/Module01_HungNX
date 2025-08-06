@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Cách 1: khởi tạo sẵn mảng
+      let numbers = [3, 15, 7, 12, 9, 10, 18, 5, 21, 8];
+      let count = 0;
+      for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] >= 10) {
+          count++;
+        }
+      }
+      document.write("Số lượng phần tử lớn hơn hoặc bằng 10 là:" + count);
+    </script>
+  </body>
+</html>

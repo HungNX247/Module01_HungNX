@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Cách 2: Nhập mảng  từ người dùng
+      let numbers = [];
+      for (let i = 0; i < 10; i++) {
+        let inputElement = parseInt(prompt(`Nhập phần tử thứ ${i + 1}`));
+        numbers.push(inputElement);
+      }
+      let newArr = numbers.sort((a, b) => b - a);
+      document.write(newArr);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Cách 2: Nhập mảng  từ người dùng
+      let a = [];
+      let b = [];
+      for (let i = 0; i < 10; i++) {
+        let input = parseInt(prompt(`Nhập phần tử thứ ${i + 1} của mảng a`));
+        a.push(input);
+      }
+
+      for (let i = 0; i < 10; i++) {
+        let input = parseInt(prompt(`Nhập phần tử thứ ${i + 1} của mảng b`));
+        b.push(input);
+      }
+
+      let c = b.concat(a);
+      document.write("Mảng c gồm 20 phần tử:" + c);
+    </script>
+  </body>
+</html>

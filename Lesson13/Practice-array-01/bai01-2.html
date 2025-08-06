@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Cách 2: Nhập mảng  từ người dùng
+      let numbers = [];
+      let count = 0;
+      for (let i = 0; i < 10; i++) {
+        let inputElement = parseInt(
+          prompt(`Nhập phần tử thứ ${i + 1} của mảng`)
+        );
+        numbers.push(inputElement);
+
+        if (inputElement >= 10) {
+          count++;
+        }
+      }
+      document.write("Mảng đã nhập: " + numbers + "<br>");
+      document.write("Số lượng phần tử lớn hơn hoặc bằng 10 là: ", count);
+    </script>
+  </body>
+</html>

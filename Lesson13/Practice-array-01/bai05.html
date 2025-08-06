@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let numbers = [5, -3, 12, -7, 0, 8, -1, 4, -10, 6];
+      let countNegative = 0;
+      for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] < 0) {
+          countNegative++;
+        }
+      }
+      document.write("Số lượng số nguyên âm trong mảng là:" + countNegative);
+    </script>
+  </body>
+</html>

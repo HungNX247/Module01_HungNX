@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Cách 1: khởi tạo sẵn mảng
+      let numbers = [5, 8, 3, 12, 7, 9, 4, 15, 2, 10];
+      let V = 7;
+
+      let index = numbers.indexOf(V);
+
+      if (index != -1) {
+        for (let i = index; i < numbers.length - 1; i++) {
+          numbers[i] = numbers[i + 1];
+        }
+        numbers[numbers.length - 1] = 0;
+        alert(`Đã xóa phần tử ${V} khỏi mảng`);
+      } else {
+        alert(`Giá trị ${V} không tồn tại trong mảng`);
+      }
+
+      document.write("Mảng sau khi xử lý: " + numbers);
+    </script>
+  </body>
+</html>

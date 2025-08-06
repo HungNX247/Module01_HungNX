@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Cách 2: Nhập mảng  từ người dùng
+      let numbers = [];
+      while (numbers.length < 10) {
+        let input = parseInt(
+          prompt(
+            `Nhập phần tử thứ ${numbers.length + 1} (khác các phần tử trước):`
+          )
+        );
+        numbers.push(input);
+      }
+
+      let max = numbers[0];
+      let index = 0;
+
+      for (let i = 1; i < numbers.length; i++) {
+        if (numbers[i] > max) {
+          max = numbers[i];
+          index = i;
+        }
+      }
+
+      document.write("Mảng đã nhập:", numbers + "<br>");
+      document.write("Giá trị lớn nhất là: ", max + "<br>");
+      document.write("Vị trí của phần tử lớn nhất: ", index);
+    </script>
+  </body>
+</html>
