@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input
+      type="number"
+      id="inputF"
+      oninput="temperatureConverter(this.value)"
+      onchange="temperatureConverter(this.value)"
+    />
+    <p id="result">Celsius:</p>
+    <script>
+      function temperatureConverter(valNum) {
+        valNum = parseFloat(valNum);
+        document.getElementById("result").innerHTML = (valNum - 32) / 1.8;
+      }
+    </script>
+  </body>
+</html>
