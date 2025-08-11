@@ -21,7 +21,7 @@
       if (isNaN(numberMeter)) {
         alert("Giá trị nhập không hợp lệ");
       } else {
-        let result1 = footToMeter(numberMeter);
+        let result1 = meterToFoot(numberMeter);
         document.getElementById(
           "result1"
         ).innerHTML = `${numberMeter} mét = ${result1} feet`;
@@ -32,7 +32,7 @@
       if (isNaN(numberFoot)) {
         alert("Giá trị nhập không hợp lệ");
       } else {
-        let result2 = meterToFoot(numberFoot);
+        let result2 = footToMeter(numberFoot);
         document.getElementById(
           "result2"
         ).innerHTML = `${numberFoot} feet = ${result2} mét`;
