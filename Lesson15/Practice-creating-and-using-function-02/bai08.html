@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function reverseArray(arr) {
+        return arr.reverse();
+      }
+      let numbers = [];
+      let n = parseInt(prompt("Nhập số lượng phần tử của mảng"));
+
+      for (let i = 0; i < n; i++) {
+        let num = parseInt(prompt("Nhập phần tử thứ " + (i + 1) + ":"));
+        numbers.push(num);
+      }
+      let firstArray = numbers.slice();
+
+      let result = reverseArray(numbers);
+      document.write(`Mang ban dau la: ${firstArray} <br>`);
+      document.write(`Mang sau khi dao nguoc la: ${result}`);
+    </script>
+  </body>
+</html>

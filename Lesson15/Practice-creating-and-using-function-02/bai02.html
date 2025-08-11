@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const SO_PI = 3.14159;
+      function areaOfCircle(radius) {
+        return SO_PI * Math.pow(radius, 2);
+      }
+      function circumferenceOfCircle(radius) {
+        return 2 * SO_PI * radius;
+      }
+
+      let raDius = parseFloat(prompt("Nhập bán kính hình tròn:"));
+      if (isNaN(raDius) || raDius <= 0) {
+        alert(`Bán kính nhập vào không hợp lệ`);
+      } else {
+        let aRea = areaOfCircle(raDius);
+        let perimeter = circumferenceOfCircle(raDius);
+        document.write(
+          `Diện tích hình tròn với bán kính ${raDius} là: ${aRea.toFixed(
+            3
+          )} <br>`
+        );
+        document.write(
+          `Chu vi hình tròn với bán kính ${raDius} là: ${perimeter.toFixed(3)}`
+        );
+      }
+    </script>
+  </body>
+</html>

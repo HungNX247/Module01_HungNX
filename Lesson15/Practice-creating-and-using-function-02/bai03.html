@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function factorial(n) {
+        if (n < 0 || isNaN(n)) {
+          alert("Số âm không có giai thừa");
+          return null;
+        }
+        let result = 1;
+        for (let i = 1; i <= n; i++) {
+          result *= i;
+        }
+        return result;
+      }
+      let number = parseInt(prompt("Nhập số nguyên cần tính giai thừa"));
+      let facTorial = factorial(number);
+      if (facTorial !== null) {
+        alert(`Giai thừa của ${number} là: ${facTorial}`);
+      }
+    </script>
+  </body>
+</html>

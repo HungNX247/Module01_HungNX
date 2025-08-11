@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function checkCharInArray(arr, char) {
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] === char) {
+            count++;
+          }
+        }
+        if (count > 0) {
+          return count;
+        } else {
+          return -1;
+        }
+      }
+
+      let array = [];
+      let size = parseInt(prompt("Nhap so phan tu cua mang"));
+      for (let i = 0; i < size; i++) {
+        array[i] = prompt(`Nhap ky tu thu ${i + 1}:`);
+      }
+
+      let charToCheck = prompt(`Nhap ky tu can kiem tra`);
+      let result = checkCharInArray(array, charToCheck);
+
+      if (result === -1) {
+        alert(`Ky tu '${charToCheck}' khong co trong mang`);
+      } else {
+        alert(`ky tu '${charToCheck}' xuat hien ${result} lan trong mang`);
+      }
+    </script>
+  </body>
+</html>

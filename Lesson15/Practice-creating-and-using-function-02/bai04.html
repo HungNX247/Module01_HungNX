@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function isNumber(str) {
+        return !isNaN(str) && Number(str) >= 1;
+      }
+      let character = prompt("Nhập ký tự");
+      let result = isNumber(character);
+      if (result) {
+        alert(`${character} là số hợp lệ`);
+      } else {
+        alert(`${character} không là số hợp lệ`);
+      }
+    </script>
+  </body>
+</html>
