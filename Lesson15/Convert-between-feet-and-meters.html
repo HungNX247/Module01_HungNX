@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="result1"></p>
+    <p id="result2"></p>
+    <script>
+      function footToMeter(foot) {
+        return 0.305 * foot;
+      }
+      function meterToFoot(meter) {
+        return 3.279 * meter;
+      }
+
+      let inputMeter = prompt("Enter a number meter:");
+      let numberMeter = parseFloat(inputMeter);
+      if (isNaN(numberMeter)) {
+        alert("Giá trị nhập không hợp lệ");
+      } else {
+        let result1 = footToMeter(numberMeter);
+        document.getElementById(
+          "result1"
+        ).innerHTML = `${numberMeter} mét = ${result1} feet`;
+      }
+
+      let inputFoot = prompt("Enter a number foot:");
+      let numberFoot = parseFloat(inputFoot);
+      if (isNaN(numberFoot)) {
+        alert("Giá trị nhập không hợp lệ");
+      } else {
+        let result2 = meterToFoot(numberFoot);
+        document.getElementById(
+          "result2"
+        ).innerHTML = `${numberFoot} feet = ${result2} mét`;
+      }
+    </script>
+  </body>
+</html>
