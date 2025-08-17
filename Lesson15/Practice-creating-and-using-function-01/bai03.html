@@ -20,10 +20,8 @@
         }
         return num1 + num2;
       }
-      let input1 = prompt("Enter a number1:");
-      let number1 = Number(input1);
-      let input2 = prompt("Enter a number2:");
-      let number2 = Number(input2);
+      let number1 = Number(prompt("Enter a number1:"));
+      let number2 = Number(prompt("Enter a number2:"));
       let result = myFunction(number1, number2);
       if (result !== undefined) {
         alert(result);
